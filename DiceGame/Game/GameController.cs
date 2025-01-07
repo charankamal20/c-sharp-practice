@@ -22,6 +22,12 @@
             {
                 int guessedNumber = _player.PlayTurn("Enter a Number between " + 1 + "-" + _dice.NumOfSides + ": ");
 
+                if (guessedNumber > 0 && guessedNumber <= _dice.NumOfSides)
+                {
+                    Console.WriteLine("Incorrect input");
+                    continue;
+                }
+
                 if (ValidateResults(diceResult, guessedNumber))
                 {
                     break;
@@ -43,7 +49,7 @@
             Console.ReadKey();
         }
 
-        private bool ValidateResults(int dice, int guessed) => dice == guessed;
+        private static bool ValidateResults(int dice, int guessed) => dice == guessed;
 
         private void PrintWelcomeMessage()
         {

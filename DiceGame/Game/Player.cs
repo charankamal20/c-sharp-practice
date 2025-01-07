@@ -9,15 +9,13 @@
         }
 
         public int PlayTurn(string message)
-        {
-            int guessedNum = 0;
-
+        {   
             while (true)
             {
                 Console.Write("\n" + message);
                 var input = Console.ReadLine();
 
-                if (int.TryParse(input, out guessedNum) && guessedNum > 0 && guessedNum <= 6)
+                if (int.TryParse(input, out int guessedNum))
                 {
                     return guessedNum;
                 }
